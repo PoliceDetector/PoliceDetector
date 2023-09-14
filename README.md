@@ -3,7 +3,8 @@
 
 <p align="right">
 
-<img align="right" src="https://user-images.githubusercontent.com/57064943/163706360-f1d8e14a-aabd-40f2-90a0-0cdc0badf70c.png" height="20%" width="20%"/>
+
+<img align="right" src="https://github.com/PoliceDetector/PoliceDetector/assets/145007532/d1cb1037-6032-45e5-928c-ea322142507b" height="20%" width="20%"/>
 	
 </p>
 
