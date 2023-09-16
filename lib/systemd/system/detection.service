@@ -1,0 +1,12 @@
+[Unit]
+Description=Police Detection Bluetooth Service
+After=multi-user.target
+
+[Service]
+Type=idle
+User=root
+ExecStart=/usr/bin/python3 /home/pi/police.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
