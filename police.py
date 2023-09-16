@@ -29,7 +29,7 @@ Oh Yeah, I Set It Down When I Got A Piece Of Cake!" - Clancy Wiggum
 #################################################################################################################
 # Open Sauce Software, tasty and free!
 #################################################################################################################
-import simplepyble, time, threading, logging
+import simplepyble, time, threading, logging, os, sys
 from datetime import datetime
 #################################################################################################################
 current_dateTime = datetime.now()
@@ -97,7 +97,12 @@ def GetBluetoothMacList():
         #detectionslog = open("detections.log", "a")
         #print(peripheral.address(), current_dateTime, file=detectionslog)
         #detectionslog.close()
-        if "4e:fa" in peripheral.address():
+        if "00:25:DF" in peripheral.address():
+            # https://www.youtube.com/watch?v=6GyJZoep6rc
+            # Debian GNU Linux 
+            # os.system("mpv POLICE.mp4")
+            # Raspberry Pi
+            # os.system("omxplayer POLICE.mp4")
             police_detected = police_detected + 1
             print(" >>>>>>>>>> POLICE DETECTED:", police_detected, datetime.now())
             detectionslog = open("detections.log", "a")
