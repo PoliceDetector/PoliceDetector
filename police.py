@@ -97,7 +97,7 @@ def GetBluetoothMacList():
         #detectionslog = open("detections.log", "a")
         #print(peripheral.address(), current_dateTime, file=detectionslog)
         #detectionslog.close()
-        if "00:25:DF" in peripheral.address():
+        if "00:25:DF" in peripheral.address(): # magic numbers
             # https://www.youtube.com/watch?v=6GyJZoep6rc
             # Debian GNU Linux 
             # os.system("mpv POLICE.mp4")
