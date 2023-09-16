@@ -76,22 +76,20 @@ def GetBluetoothMacList():
     adapters = simplepyble.Adapter.get_adapters()
     if len(adapters) == 0:
         print(" >>>> No Adapters Found...")
-    # Query the user to pick an adapter
-    #print("Please select an adapter:")
-    #for i, adapter in enumerate(adapters):
+    # print("Please select an adapter:") # Query the user to pick an adapter
+    # for i, adapter in enumerate(adapters):
     #    print(f"{i}: {adapter.identifier()} [{adapter.address()}]")
-    choice = int(0)
-    adapter = adapters[choice]
+    hci = int(0) # 0 for built in bt interface, 1 for USB bt interface (hci0, hci1)
+    adapter = adapters[hci]
     print(f" >>>> Bluetooth adapter: {adapter.identifier()} [{adapter.address()}]")
     adapter.set_callback_on_scan_start(lambda: print(" >>>> Scan started.", datetime.now()))
     adapter.set_callback_on_scan_stop(lambda: print(" >>>> Scan complete.", datetime.now()))
     adapter.set_callback_on_scan_found(lambda peripheral: print(f" > Found {peripheral.identifier()} [{peripheral.address()}]"))
-    # Scan for 5 seconds
-    adapter.scan_for(4500)
+    adapter.scan_for(5000) # Scan for 5 seconds
     peripherals = adapter.scan_get_results()
     count = count + 1
     print(" >>>> Scan Count:", count)
-    #addr = "69:58"
+    #addr = "" delete
     for peripheral in peripherals:
         #print(peripheral.address())
         #detectionslog = open("detections.log", "a")
